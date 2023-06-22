@@ -18,4 +18,6 @@ To run the application, follow these steps:
    npm install
 
 5. Run the application
+   
+   ```shell
    npm run dev
