@@ -24,8 +24,13 @@ const bookSchema = new mongoose.Schema({
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    required: false,
+    required: true,
     ref: "author",
+  },
+  likes: {
+    type: Number,
+    default: 0,
+    required: true,
   },
 });
 
