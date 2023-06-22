@@ -1,4 +1,5 @@
 const Author = require("../models/authorModel");
+const logger = require("../utils/loggerUtil");
 
 const addAuthor = async (ctx) => {
   try {
@@ -10,7 +11,7 @@ const addAuthor = async (ctx) => {
       email: email,
       contactNo: contactNo,
     });
-
+    logger.info(`Author ${author._id} added`);
     return (ctx.body = author);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -21,6 +22,7 @@ const getAuthor = async (ctx) => {
   try {
     const id = ctx.params.id;
     const author = await Author.findById(id);
+    logger.info(`Author ${author._id} requested`);
     return (ctx.body = author);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -38,6 +40,8 @@ const editAuthor = async (ctx) => {
       email: email,
       contactNo: contactNo,
     });
+
+    logger.info(`Author ${author._id} updated`);
     return (ctx.body = author);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -47,6 +51,7 @@ const editAuthor = async (ctx) => {
 const getAuthors = async (ctx) => {
   try {
     const authors = await Author.find({});
+    logger.info(`Authors requested`);
     return (ctx.body = authors);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -57,6 +62,7 @@ const deleteAuthor = async (ctx) => {
   try {
     const id = ctx.params.id;
     const author = await Author.findByIdAndDelete(id);
+    logger.info(`Author ${author._id} deleted`);
     return (ctx.body = author);
   } catch (err) {
     return (ctx.body = { error: err.message });

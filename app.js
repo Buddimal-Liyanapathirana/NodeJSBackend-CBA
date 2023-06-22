@@ -4,6 +4,8 @@ const KoaRouter = require("koa-router");
 const json = require("koa-json");
 const bodyparser = require("koa-bodyparser");
 const cors = require("@koa/cors");
+const winston = require("winston");
+const logger = require("./utils/loggerUtil");
 
 const dbConnect = require("./utils/dbUtil");
 const authorRoutes = require("./routes/authorRoutes");
@@ -25,5 +27,5 @@ router.get("/", (ctx) => {
 
 app.listen(process.env.PORT, () => {
   dbConnect();
-  console.log(`App running on http://localhost:${process.env.PORT}`);
+  logger.info(`App running on http://localhost:${process.env.PORT}`);
 });

@@ -1,5 +1,6 @@
 const Author = require("../models/authorModel");
 const Book = require("../models/bookModel");
+const logger = require("../utils/loggerUtil");
 
 const addBook = async (ctx) => {
   try {
@@ -18,6 +19,7 @@ const addBook = async (ctx) => {
       author: author,
     });
 
+    logger.info(`Book ${book._id} added`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -44,6 +46,7 @@ const likeBook = async (ctx) => {
       return (ctx.body = { error: "Book not found." });
     }
 
+    logger.info(`Book ${book._id} liked`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -57,6 +60,7 @@ const getBook = async (ctx) => {
       path: "author",
       select: "firstName lastName",
     });
+    logger.info(`Book ${book._id} requested`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -70,6 +74,8 @@ const getBookByIsbn = async (ctx) => {
       path: "author",
       select: "firstName lastName",
     });
+
+    logger.info(`Book ${book._id} requested`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -82,6 +88,8 @@ const getBooks = async (ctx) => {
       path: "author",
       select: "firstName lastName",
     });
+
+    logger.info(`Books requested`);
     return (ctx.body = books);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -99,6 +107,7 @@ const getBooksByCategory = async (ctx) => {
     if (books.length < 1) {
       return (ctx.body = { error: "No books available" });
     }
+    logger.info(`Books requested`);
     return (ctx.body = books);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -109,6 +118,8 @@ const deleteBook = async (ctx) => {
   try {
     const id = ctx.params.id;
     const book = await Book.findByIdAndDelete(id);
+
+    logger.info(`Book ${book._id} deleted`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
@@ -126,6 +137,8 @@ const editBook = async (ctx) => {
       title: title,
       author: author,
     });
+
+    logger.info(`Book ${book._id} updated`);
     return (ctx.body = book);
   } catch (err) {
     return (ctx.body = { error: err.message });
