@@ -22,7 +22,8 @@ const authorSchema = new mongoose.Schema({
   contactNo: {
     type: String,
     required: true,
-    match: [/^[0-9]+$/, "numeric only"],
+    match: [/^[0-9]+$/, "Invalid contact number"],
+    maxlength: [10, "Contact number should not exceed 10 digits."],
   },
 });
 
