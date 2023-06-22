@@ -1,6 +1,6 @@
 const Author = require("../models/authorModel");
 const Book = require("../models/bookModel");
-const logger = require("../utils/loggerUtil");
+const logger = require("../utils/eventLoggerUtil");
 
 const addBook = async (ctx) => {
   try {
@@ -145,7 +145,39 @@ const editBook = async (ctx) => {
   }
 };
 
+const getLikes = async (ctx, requestBody) => {
+  try {
+    const books = await Book.find({}).populate({
+      path: "author",
+      select: "firstName lastName",
+    });
+
+    // Filter unique author IDs
+    const uniqueAuthorIds = [...new Set(books.map((book) => book.author._id))];
+
+    // Calculate total likes for each author
+    const authorLikes = uniqueAuthorIds.map((authorId) => {
+      const totalLikes = books
+        .filter((book) => book.author._id.toString() === authorId.toString())
+        .reduce((sum, book) => sum + book.likes, 0);
+
+      return { authorId, totalLikes };
+    });
+
+    logger.info(`Books requested`);
+    return (ctx.body = authorLikes);
+  } catch (err) {
+    return (ctx.body = { error: err.message });
+  }
+};
+
 module.exports = {
+  // Other controller functions...
+  getLikes,
+};
+
+module.exports = {
+  getLikes,
   addBook,
   getBook,
   getBooks,

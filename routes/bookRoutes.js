@@ -8,6 +8,7 @@ const {
   editBook,
   likeBook,
   getBooksByCategory,
+  getLikes,
 } = require("../controllers/bookContorller");
 
 const router = new KoaRouter({ prefix: "/book" });
@@ -16,6 +17,7 @@ router.post("/addBook", addBook);
 router.put("/likeBook", likeBook);
 router.put("/:id", editBook);
 router.delete("/:id", deleteBook);
+router.get("/getLikes", getLikes);
 router.get("/findByCategory", getBooksByCategory);
 router.get("/findByIsbn", getBookByIsbn);
 router.get("/:id", getBook);

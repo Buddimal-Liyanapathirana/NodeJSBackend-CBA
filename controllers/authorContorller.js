@@ -1,5 +1,5 @@
 const Author = require("../models/authorModel");
-const logger = require("../utils/loggerUtil");
+const logger = require("../utils/eventLoggerUtil");
 
 const addAuthor = async (ctx) => {
   try {

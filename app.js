@@ -5,7 +5,8 @@ const json = require("koa-json");
 const bodyparser = require("koa-bodyparser");
 const cors = require("@koa/cors");
 const winston = require("winston");
-const logger = require("./utils/loggerUtil");
+const logger = require("./utils/eventLoggerUtil");
+const getLikes = require("./utils/getLikes");
 
 const dbConnect = require("./utils/dbUtil");
 const authorRoutes = require("./routes/authorRoutes");
@@ -21,11 +22,13 @@ app.use(router.routes()).use(router.allowedMethods());
 app.use(authorRoutes.routes());
 app.use(bookRoutes.routes());
 
-router.get("/", (ctx) => {
-  ctx.body = { message: "Hello" };
-});
-
 app.listen(process.env.PORT, () => {
   dbConnect();
+  getLikes();
+
+  // Schedule the execution of getLikes every 5 minutes
+  // setInterval(() => {
+  //   getLikes();
+  // }, 5 * 60 * 1000);
   logger.info(`App running on http://localhost:${process.env.PORT}`);
 });

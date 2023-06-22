@@ -1,0 +1,45 @@
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T17:50:14.793Z"}
+{"level":"info","message":"Book 64947c73d80b35ac506589c2 liked","timestamp":"2023-06-22T17:50:33.902Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T17:50:45.597Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T17:50:58.640Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:00:50.519Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:01:29.952Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:01:42.249Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:02:25.277Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:03:52.805Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:04:39.672Z"}
+{"level":"info","message":"Authors requested","timestamp":"2023-06-22T18:04:51.721Z"}
+{"level":"info","message":"Book 64948d67acc1f2b4a0996ae0 added","timestamp":"2023-06-22T18:05:28.126Z"}
+{"level":"info","message":"Book 64948d67acc1f2b4a0996ae0 liked","timestamp":"2023-06-22T18:05:44.371Z"}
+{"level":"info","message":"Book 64948d67acc1f2b4a0996ae0 liked","timestamp":"2023-06-22T18:05:45.381Z"}
+{"level":"info","message":"Book 64948d67acc1f2b4a0996ae0 liked","timestamp":"2023-06-22T18:05:46.311Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:07:12.441Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:07:18.030Z"}
+{"level":"info","message":"Author Likes: [{\"author\":\"Matthew Damon\",\"authorId\":\"64946bd3ac232f125edd7186\",\"likeCount\":12}]","timestamp":"2023-06-22T18:07:18.031Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:10:08.683Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:10:14.699Z"}
+{"level":"info","message":"Author Likes: [{\"author\":\"Matthew Damon\",\"likes\":12}]","timestamp":"2023-06-22T18:10:14.700Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:10:55.936Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:11:00.348Z"}
+{"level":"info","message":"Author Likes: [{\"author\":\"Matthew Damon\",\"authorId\":\"64946bd3ac232f125edd7186\",\"likeCount\":12}]","timestamp":"2023-06-22T18:11:00.349Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:13:09.159Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:13:13.083Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:14:16.340Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:14:51.191Z"}
+{"level":"info","message":"Book 64948d67acc1f2b4a0996ae0 deleted","timestamp":"2023-06-22T18:15:07.871Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:15:12.502Z"}
+{"level":"info","message":"Authors requested","timestamp":"2023-06-22T18:15:22.451Z"}
+{"level":"info","message":"Author 64948fc7de8becf0605bc0f7 added","timestamp":"2023-06-22T18:15:35.616Z"}
+{"level":"info","message":"Book 64948fd6de8becf0605bc0fa added","timestamp":"2023-06-22T18:15:50.811Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:15:54.854Z"}
+{"level":"info","message":"Book 64948fd6de8becf0605bc0fa liked","timestamp":"2023-06-22T18:16:10.127Z"}
+{"level":"info","message":"Book 64947c73d80b35ac506589c2 requested","timestamp":"2023-06-22T18:16:13.237Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:16:18.615Z"}
+{"level":"info","message":"Books requested","timestamp":"2023-06-22T18:16:27.116Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:22:05.360Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:22:34.267Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:33:19.378Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:34:07.180Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:34:13.547Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:34:16.083Z"}
+{"level":"info","message":"App running on http://localhost:3030","timestamp":"2023-06-22T18:34:44.493Z"}
