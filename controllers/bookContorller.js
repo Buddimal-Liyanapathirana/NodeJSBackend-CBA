@@ -27,7 +27,14 @@ const addBook = async (ctx) => {
 const likeBook = async (ctx) => {
   try {
     const isbn = ctx.request.body.isbn;
+
+    // Check if ISBN already exists
+    const existingBook = await Book.findOne({ isbn: isbn });
+    if (!existingBook) {
+      return (ctx.body = { error: "Invalid ISBN." });
+    }
     const book = await Book.findOneAndUpdate(
+      //increments like property
       { isbn: isbn },
       { $inc: { likes: 1 } },
       { new: true }
@@ -80,6 +87,24 @@ const getBooks = async (ctx) => {
     return (ctx.body = { error: err.message });
   }
 };
+
+const getBooksByCategory = async (ctx) => {
+  try {
+    const category = ctx.request.body.category;
+
+    const books = await Book.find({ category: category }).populate({
+      path: "author",
+      select: "firstName lastName",
+    });
+    if (books.length < 1) {
+      return (ctx.body = { error: "No books available" });
+    }
+    return (ctx.body = books);
+  } catch (err) {
+    return (ctx.body = { error: err.message });
+  }
+};
+
 const deleteBook = async (ctx) => {
   try {
     const id = ctx.params.id;
@@ -115,4 +140,5 @@ module.exports = {
   deleteBook,
   editBook,
   likeBook,
+  getBooksByCategory,
 };
